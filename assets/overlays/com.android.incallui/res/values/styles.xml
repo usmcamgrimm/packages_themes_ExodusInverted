@@ -16,6 +16,80 @@
   -->
 
 <resources>
+    <drawable name="grayBg">#FF333333</drawable>
+
+    <style name="info_label">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.info_label</item>
+        <item name="android:paddingEnd">4dip</item>
+    </style>
+
+    <style name="info_layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">10dip</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:paddingEnd">10dip</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="entry_layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextAppearance" parent="android:TextAppearance">
+    </style>
+
+    <style name="TextAppearance.info_label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!-- Buttons in the main "button row" of the in-call onscreen touch UI. -->
+    <style name="InCallButton">
+        <item name="android:layout_width">@dimen/in_call_button_dimension</item>
+        <item name="android:layout_height">@dimen/in_call_button_dimension</item>
+        <item name="android:layout_marginBottom">@dimen/call_button_margin_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/call_button_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/call_button_margin_horizontal</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <!-- "Compound button" variation of InCallButton.
+         These buttons have the concept of two states: checked and unchecked.
+         (This style is just like "InCallButton" except that we also
+         clear out android:textOn and android:textOff, to avoid the default
+         text label behavior of the ToggleButton class.) -->
+    <style name="InCallCompoundButton" parent="InCallButton">
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+    </style>
+
+    <style name="InCallAnimationStyle" parent="@android:style/Animation.Activity">
+        <!-- Suppress task-to-task animation happening during the transition from
+             OutgoingCallBroadcaster (and SipOptionHandler) to InCallActivity.
+             The transition unexpectedly happens during the transition (inside the phone task),
+             because InCallActivity is using android:launchMode="singleInstance".
+
+             - taskOpenEnterAnimation/taskOpenExitAnimation is used for the first time
+               InCallActivity instance is created.
+
+             - taskToFrontEnterAnimation/taskToFrontExitAnimation is used when InCallActivity
+               is already available.
+               (Note that InCallActivity won't be destroyed once it is created)
+
+             TODO: try removing the flag instead -->
+        <item name="android:taskOpenEnterAnimation">@anim/activity_open_enter</item>
+        <item name="android:taskOpenExitAnimation">@anim/activity_open_exit</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/activity_open_enter</item>
+        <item name="android:taskToFrontExitAnimation">@anim/activity_open_exit</item>
+    </style>
+
     <!-- Theme for the InCallActivity activity. Should have a transparent background for the
          circular reveal animation for a new outgoing call to work correctly. We don't just use
          Theme.Black.NoTitleBar directly, since we want any popups or dialogs
