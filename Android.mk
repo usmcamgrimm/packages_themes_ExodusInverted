@@ -22,7 +22,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
-LOCAL_PACKAGE_NAME := EosDarkside
+LOCAL_PACKAGE_NAME := Blackened
 # Disable proguard, for now.
 #LOCAL_CERTIFICATE := platform
 #LOCAL_PROGUARD_FLAG_FILES := proguard.flags

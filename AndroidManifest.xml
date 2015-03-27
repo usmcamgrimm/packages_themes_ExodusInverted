@@ -16,7 +16,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.teameos.themes.eos.darkside">
+    package="org.exodus.themes.exodus.blackened">
 
     <uses-feature android:required="true" android:name="org.cyanogenmod.theme" />
 
