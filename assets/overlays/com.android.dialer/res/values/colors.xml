@@ -22,10 +22,6 @@
     <color name="dialer_red_highlight_color">#ff1744</color>
     <color name="dialer_green_highlight_color">#00c853</color>
 
-    <!-- Color for the setting text. -->
-    <color name="setting_primary_color">@color/dialtacts_primary_text_color</color>
-    <!-- Color for the setting description text. -->
-    <color name="setting_secondary_color">@color/dialtacts_secondary_text_color</color>
     <color name="setting_background_color">@*android:color/material_blue_grey</color>
 
     <!-- Color of the text describing an unconsumed missed call. -->
@@ -111,5 +107,6 @@
     <color name="call_stats_incoming">#33b5e5</color>
     <color name="call_stats_outgoing">#99cc00</color>
     <color name="call_stats_missed">#eb1313</color>
+    <color name="call_stats_blacklist">#ebaf0d</color>
     <color name="call_stats_bar_background">#88888888</color>
 </resources>
