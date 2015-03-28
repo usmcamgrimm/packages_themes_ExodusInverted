@@ -16,7 +16,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.exodus.themes.exodus.blackened">
+    package="org.exodus.themes.exodusinverted">
 
     <uses-feature android:required="true" android:name="org.cyanogenmod.theme" />
 
